@@ -63,4 +63,6 @@ images = pipeline(
 
 
 images.save(image_filename)
+logging.info(f"Image saved successfully: {image_filename}")
+print(f"✅ Image saved: {image_filename}")
 
