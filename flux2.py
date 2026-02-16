@@ -53,12 +53,12 @@ logging.info(f"Image will be saved as: {image_filename}")
 pipeline = Flux2Pipeline.from_pretrained("black-forest-labs/FLUX.2-dev", torch_dtype=torch.bfloat16, device_map="balanced")
 
 
-pipeline.reset_device_map()
-pipeline.enable_sequential_cpu_offload()
+#pipeline.reset_device_map()
+#pipeline.enable_sequential_cpu_offload()
 images = pipeline(
         prompt=prompt,    
         num_inference_steps=35, # 28 is a good trade-off
-        guidance_scale=9
+        guidance_scale=12
 ).images[0]
 
 

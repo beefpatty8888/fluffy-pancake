@@ -51,17 +51,17 @@ logging.info(f"Image will be saved as: {image_filename}")
 
 # Load and configure pipeline
 pipeline = DiffusionPipeline.from_pretrained(
-    "Qwen/Qwen-Image-2512", torch_dtype=torch.bfloat16, device_map="balanced"
+    "Qwen/Qwen-Image-2512", torch_dtype=torch.bfloat16, device_map="cuda"
 )
 
-pipeline.reset_device_map()
-pipeline.enable_sequential_cpu_offload()
+#pipeline.reset_device_map()
+#pipeline.enable_sequential_cpu_offload()
 
 # Generate image
 images = pipeline(
     prompt=prompt,
     num_inference_steps=35,
-    guidance_scale=10
+    guidance_scale=12
 ).images[0]
 
 # Save and log result
