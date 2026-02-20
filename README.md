@@ -44,7 +44,10 @@ jack@io:~/repos/fluffy-pancake$ /home/jack/.pyenv/versions/3.12.9/bin/python -m 
 jack@io:~/repos/fluffy-pancake$ source python3.12venv/bin/activate 
 
 # have to re-download and compile for ARM processor. 
-(python3.12venv) jack@io:~/repos/fluffy-pancake$ pip install --force-reinstall torch diffusers gguf accelerate transformers torchvision llama-cpp-python --extra-index-url https://download.pytorch.org/whl/cu130 
+(python3.12venv) jack@io:~/repos/fluffy-pancake$ pip install --force-reinstall torch gguf accelerate transformers torchvision llama-cpp-python --extra-index-url https://download.pytorch.org/whl/cu130 
+
+# install the specific version of the diffusers library from huggingface
+(python3.12venv) jack@io:~/repos/diffusion-scripts$ pip install git+https://github.com/huggingface/diffusers
 ```
  
 Only needed if an older pytorch cuda index url was initially used.
