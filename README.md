@@ -56,3 +56,15 @@ https://forums.developer.nvidia.com/t/effective-pytorch-and-cuda/348230/13
 
 (python3.12venv) jack@io:~/repos/fluffy-pancake$ pip install –force-reinstall torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu130 
 ```
+Login to huggingface if needed
+```
+(python3.12venv) jack@io:~/repos/diffusion-scripts$ hf auth login                                                                                                                                                                                                                                                                 
+    _|    _|  _|    _|    _|_|_|    _|_|_|  _|_|_|  _|      _|    _|_|_|      _|_|_|_|    _|_|      _|_|_|  _|_|_|_|
+    _|    _|  _|    _|  _|        _|          _|    _|_|    _|  _|            _|        _|    _|  _|        _|                                                   
+    _|_|_|_|  _|    _|  _|  _|_|  _|  _|_|    _|    _|  _|  _|  _|  _|_|      _|_|_|    _|_|_|_|  _|        _|_|_|                                               
+    _|    _|  _|    _|  _|    _|  _|    _|    _|    _|    _|_|  _|    _|      _|        _|    _|  _|        _|                                                   
+    _|    _|    _|_|      _|_|_|    _|_|_|  _|_|_|  _|      _|    _|_|_|      _|        _|    _|    _|_|_|  _|_|_|_|                                             
+                                                                                                                                                                     To log in, `huggingface_hub` requires a token generated from https://huggingface.co/settings/tokens .                                                        
+Enter your token (input will not be visible):                                                                                                                    
+Add token as git credential? [y/N]: N                                                                                                                            Token is valid (permission: read).                                                           
+```
