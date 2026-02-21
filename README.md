@@ -47,7 +47,7 @@ jack@io:~/repos/fluffy-pancake$ source python3.12venv/bin/activate
 (python3.12venv) jack@io:~/repos/fluffy-pancake$ pip install --force-reinstall torch gguf accelerate transformers torchvision llama-cpp-python --extra-index-url https://download.pytorch.org/whl/cu130 
 
 # install the specific version of the diffusers library from huggingface
-(python3.12venv) jack@io:~/repos/diffusion-scripts$ pip install git+https://github.com/huggingface/diffusers
+(python3.12venv) jack@io:~/repos/fluffy-pancake$ pip install git+https://github.com/huggingface/diffusers
 ```
  
 Only needed if an older pytorch cuda index url was initially used.
@@ -58,7 +58,7 @@ https://forums.developer.nvidia.com/t/effective-pytorch-and-cuda/348230/13
 ```
 Login to huggingface if needed
 ```
-(python3.12venv) jack@io:~/repos/diffusion-scripts$ hf auth login                                                                                                                                                                                                                                                                 
+(python3.12venv) jack@io:~/repos/fluffy-pancake$ hf auth login                                                                                                                                                                                                                                                                 
     _|    _|  _|    _|    _|_|_|    _|_|_|  _|_|_|  _|      _|    _|_|_|      _|_|_|_|    _|_|      _|_|_|  _|_|_|_|
     _|    _|  _|    _|  _|        _|          _|    _|_|    _|  _|            _|        _|    _|  _|        _|                                                   
     _|_|_|_|  _|    _|  _|  _|_|  _|  _|_|    _|    _|  _|  _|  _|  _|_|      _|_|_|    _|_|_|_|  _|        _|_|_|                                               
