@@ -1,4 +1,4 @@
-#https://civitai.com/models/2348977/klein-9b-unchained-xxx
+# https://huggingface.co/artificialguybr/PIXELART-REDMOND-FLUXKLEIN9B
 
 import datetime
 import torch
