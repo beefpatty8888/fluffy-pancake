@@ -1,0 +1,18 @@
+# https://github.com/open-webui/open-webui/blob/main/docker-compose.yaml
+services:
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:cuda
+    container_name: open-webui
+    volumes:
+      - /home/jack/open-webui:/app/backend/data
+    network_mode: "host"
+    environment:
+      - 'PORT=3000'
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all # alternatively, use `count: all` for all GPUs
+              capabilities: [gpu]
