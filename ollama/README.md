@@ -1,5 +1,6 @@
 # Install ollama
-https://ollama.com/download
+https://ollama.com/download . This installs ollama locally, as well as the
+systemd unit files.
 ```
 curl -fsSL https://ollama.com/install.sh | sh
 ```
