@@ -1,3 +1,9 @@
+# Install ollama
+https://ollama.com/download
+```
+curl -fsSL https://ollama.com/install.sh | sh
+```
+
 ```
 cd [directory-with-Modelfile]
 ollama create my-model
