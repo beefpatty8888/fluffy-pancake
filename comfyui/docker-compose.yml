@@ -1,0 +1,22 @@
+# based partly on https://github.com/bigbrozer/comfyture/blob/main/compose.yaml
+services:
+  open-webui:
+    image: comfy-ui:latest
+    # this does not seem to work with the comfy-ui image, but leaving it here for reference
+    #user: "1000:1000" # Set the user of the container to match the host's user ID and group ID
+    container_name: comfy-ui
+    volumes:
+      - /home/jack/comfy/models:/home/ubuntu/comfy/ComfyUI/models
+      - /home/jack/comfy/custom_nodes:/home/ubuntu/comfy/ComfyUI/custom_nodes
+      - /home/jack/comfy/input:/home/ubuntu/comfy/ComfyUI/input
+      - /home/jack/comfy/output:/home/ubuntu/comfy/ComfyUI/output
+      - /home/jack/comfy/user:/home/ubuntu/comfy/ComfyUI/user
+    network_mode: "host"
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all # alternatively, use `count: all` for all GPUs
+              capabilities: [gpu]

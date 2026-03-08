@@ -5,7 +5,7 @@ docker build --progress=plain --no-cache -t comfy-ui .
 
 # Run docker image
 ```
-docker run -d --network=host --gpus all --name comfy-ui comfy-ui:latest
+docker-compose up -d
 ```
 
 # NOTES

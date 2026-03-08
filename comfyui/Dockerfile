@@ -22,21 +22,19 @@ RUN apt-get update && apt-get install -y \
     libxmlsec1-dev \
     libffi-dev \
     liblzma-dev
-# Create 'comfy' user
-RUN useradd -m -s /bin/bash comfy
 
-# Switch to 'comfy' user for pyenv installation
-USER comfy
+# Switch to 'ubuntu' user for pyenv installation
+USER ubuntu
+WORKDIR /home/ubuntu
 
 # Set shell
 SHELL ["/bin/bash", "-c"]
 
 # Set environment variables for pyenv
-ENV PYENV_ROOT=/home/comfy/.pyenv
+ENV PYENV_ROOT=/home/ubuntu/.pyenv
 ENV PATH=$PYENV_ROOT/bin:$PATH
 
 # Install pyenv
-WORKDIR /home/comfy
 RUN curl -fsSL https://pyenv.run | bash 
 
 RUN echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
@@ -52,13 +50,13 @@ RUN echo 'eval "$(pyenv init - bash)"' >> ~/.bashrc
 # Install Python 3.13.6 using pyenv
 RUN pyenv install 3.13.6 
 RUN $HOME/.pyenv/versions/3.13.6/bin/python -m venv python3.13venv
-ENV PATH="/home/comfy/python3.13venv/bin:$PATH"
+ENV PATH="/home/ubuntu/python3.13venv/bin:$PATH"
 
 # Verify installation
 RUN python --version
 
 # Set working directory
-WORKDIR /home/comfy
+WORKDIR /home/ubuntu
 
 # Install Comfy-UI
 RUN pip install --force-reinstall torch diffusers gguf accelerate transformers torchvision llama-cpp-python --extra-index-url https://download.pytorch.org/whl/cu130
