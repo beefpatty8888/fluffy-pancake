@@ -2,6 +2,8 @@
 services:
   open-webui:
     image: ghcr.io/open-webui/open-webui:cuda
+    # below does not seem to work with the open-webui image, but leaving it here for reference
+    #user: "1000:1000" # Set the user of the container to match the host's user ID and group ID
     container_name: open-webui
     volumes:
       - /home/jack/open-webui:/app/backend/data
