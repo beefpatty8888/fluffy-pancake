@@ -1,5 +1,8 @@
 # something is missing here. These steps do not currently work.
 
+# The following does not work either:
+# ollama run hf.co/unsloth/Mistral-Small-4-119B-2603-GGUF
+
 # download all the split files from https://huggingface.co/lmstudio-community/Mistral-Small-4-119B-2603-GGUF/tree/main
 # then concatonate:
 # cat Mistral-Small-4-119B-2603-Q6_K-*.gguf > Mistral-Small-4-119B-2603-Q6_K-combined.gguf
