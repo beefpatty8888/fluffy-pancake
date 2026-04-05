@@ -59,9 +59,12 @@ RUN python --version
 WORKDIR /home/ubuntu
 
 # Install Comfy-UI
-RUN pip install --force-reinstall torch diffusers gguf accelerate transformers torchvision llama-cpp-python --extra-index-url https://download.pytorch.org/whl/cu130
+# install torch from pytorch nightly - https://github.com/Comfy-Org/ComfyUI?tab=readme-ov-file#nvidia
+RUN pip install --pre --upgrade --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu132
+# Install the other dependencies
+RUN pip install --upgrade --no-cache-dir diffusers gguf accelerate transformers llama-cpp-python --extra-index-url https://download.pytorch.org/whl/cu130
 RUN pip install comfy-cli
-RUN comfy --skip-prompt install --nvidia
+RUN comfy --skip-prompt install --nvidia --cuda-version 13.0
 
 # Run Comfy-UI
 EXPOSE 8080
